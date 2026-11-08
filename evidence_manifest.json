@@ -1,0 +1,66 @@
+{
+  "note": 14,
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "white-noise densities (Allan fit) per axis and segment",
+      "status": "Verified (automated)",
+      "evidence": [
+        "assets/tables/a8_static_segments.csv",
+        "assets/tables/a8_allan.csv",
+        "analysis/a8_imu_static.py"
+      ]
+    },
+    {
+      "id": "C2",
+      "claim": "gyro bias at rest per segment",
+      "status": "Verified (automated)",
+      "evidence": [
+        "assets/tables/a8_static_segments.csv",
+        "assets/tables/a8_bias_drift_10s.csv"
+      ]
+    },
+    {
+      "id": "C3",
+      "claim": "gyro z high-frequency noise; spectral peaks",
+      "status": "Verified (automated); peak source not identified",
+      "evidence": [
+        "assets/tables/a8_gyro_asd.csv"
+      ]
+    },
+    {
+      "id": "C4",
+      "claim": "calibration-file priors (0.002 / 0.02 / 2.27e-6 / 1.92e-5)",
+      "status": "Verified (file contents)",
+      "evidence": [
+        "supplier imu.yaml (not redistributed)"
+      ]
+    },
+    {
+      "id": "C6",
+      "claim": "gyro ±1000 °/s range",
+      "status": "Interpretation from output step (0.000533 rad/s = 1000/32768 °/s)",
+      "evidence": [
+        "assets/tables/a8_static_segments.csv"
+      ]
+    }
+  ],
+  "inputs": {
+    "environment": {
+      "python": "3.13.17",
+      "opencv": "4.10.0 (opencv-contrib-python-headless)",
+      "numpy": "2.2.6",
+      "pandas": "3.0.5",
+      "matplotlib": "3.11.2",
+      "os": "Linux x86_64 (CPU only)",
+      "analysis_date": "2026-10-26"
+    },
+    "imu_files": [
+      "20261026_124235_00000.imu",
+      "20261026_142800_00000.imu",
+      "20261026_143229_00000.imu",
+      "20261026_150150_00000.imu"
+    ],
+    "primary_segment": "20261026_143229_00000#0"
+  }
+}
